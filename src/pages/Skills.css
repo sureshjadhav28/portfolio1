@@ -1,0 +1,102 @@
+.skills-container {
+    background-color: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 3em;
+    color: #ffcc00;
+    margin-bottom: 50px;
+  }
+  
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .skill-card {
+    background-color: #1c1c1c;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(255, 204, 0, 0.7);
+  }
+  
+  .skill-card h2 {
+    color: #ffcc00;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .skill-bar {
+    height: 10px;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .skill-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255,204,0,0.6), rgba(255,204,0,1));
+    animation: fillSkillBar 3s ease-in-out forwards;
+  }
+  
+  .skill-bar.python::before {
+    width: 90%;
+  }
+  
+  .skill-bar.django::before {
+    width: 85%;
+  }
+  
+  .skill-bar.react::before {
+    width: 80%;
+  }
+  
+  .skill-bar.htmlcss::before {
+    width: 95%;
+  }
+  
+  .skill-bar.javascript::before {
+    width: 75%;
+  }
+  
+  .skill-bar.postgresql::before {
+    width: 70%;
+  }
+  
+  @keyframes fillSkillBar {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  
